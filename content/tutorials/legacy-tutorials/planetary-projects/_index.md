@@ -59,13 +59,13 @@ Click a program’s name or the respective “view details / vote” button lear
 
 Votes are not equal, but instead depend on the voting company's influence, which in turn depends on the size and composition of their work force. Each _individual worker_ grants influence; a pioneer grants 1 influence, and hence 100 pioneers grant 100 influence. Higher tier workforces have higher multipliers:  
 
-| Worker type 	|	Influence multiplier	|
-|---------------|---------------------------|
-| Pioneer 		| 1							|
-| Settler		| 1.25						|
-| Technician 	| 1.5						|
-| Engineer		| 1.75						|
-| Scientist		| 2							|
+| Worker type  | 	Influence multiplier  |
+|--------------|------------------------|
+| Pioneer      | 1	                     |
+| Settler      | 1.25                   |
+| Technician   | 1.5                    |
+| Engineer     | 1.75                   |
+| Scientist    | 2                      |
 
 For example, a company employing 200 pioneers, 100 settlers, and 200 technicians has an influence of 200 * 1 + 100 * 1.25 + 200 * 1.5 = 625.
 
@@ -118,23 +118,36 @@ Warehouses can be extended up to level 20. The cost of each extension is a multi
 
 ### Administration Center
 
-The AC allows you to hold elections for a planetary governor, who can set taxes and fees. Only planetary residents are eligible to vote, but anyone can run. Each term is two weeks long.
+The Administration Center allows holding elections for a planetary parliament.
 
-Once erected on a planet, the building will be listed as the “Planetary Administration Center” under Infrastructure in the PLI window. Clicking the entry will open the ADM window, which lists information on the current governor and the next election. The governor's Corporation and Faction are important because one of them always collects the total local fees paid by the planet's residents (see below).
+Once erected on a planet, the building will be listed as the “Planetary Administration Center” under Infrastructure in the `PLI` command. Clicking the entry will open the `ADM` command, which lists information about the members of parliament and the next election.
+
+The main purpose of the Administration Center is to create and vote on motions to set taxes and fees. Only planetary residents are eligible to vote, but anyone can run. Each term is 28 days long. Elections take place in the last eight days of each term.
 
 ![ADM](adm-overview.png)
 
 #### The Election Campaign
 
-The current candidates for governor are listed at the bottom of the upcoming term section. Select the VOTE button next to your favorite candidate to cast your vote.
+The current candidates for the parliament are listed at the bottom of the 'Upcoming term' section. The electoral system is based on approval voting: Every inhabitant can vote for all candidates they approve of. In the end, the candidates with the most votes will become members of parliament and the single candidate with the most votes will become governor.
+
+The number of seats in the parliament is determined by the number of bases a planet has:
+
+| # sites | seats |
+|---------|-------|
+| < 25    | 2     |
+| < 100   | 3     |
+| < 300   | 5     |
+| >= 300  | 7     |
 
 ![Voting](adm-vote.png)
 
-If you'd like to run for governor, select the RUN button below the list to throw your hat in the ring. All residents of the planet will be notified about the outcome of the election.
+If you'd like to run for governor, select the RUN button below the list to throw your hat in the ring. 
+
+All residents of the planet will be notified about the outcome of the election.
 
 ![Election outcome](voting-outcome.png)
 
-#### Being the Governor
+#### Being the Governor / Member of Parliament
 
 **NOTE:** Recent updates changed the process of how political actions are handled. Bigger planets are now ruled by parliaments instead of solo governors. In any case though, to manage political actions you now have to switch to the respective **government context** (via CTXS at the top of the screen), and then issue **motions** via the `MOTS` command. These will be voted upon by all government members and then, if the motion passes by majority decision, the included actions ("components") will be executed.
 
